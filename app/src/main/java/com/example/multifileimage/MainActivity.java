@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(),
                     FullImage.class);
             intent.putExtra("id",i);
-            startActivity(intent);
+            22startActivity(intent);
         }
     };
 }
