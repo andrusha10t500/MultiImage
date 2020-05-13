@@ -8,12 +8,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/AddFile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/button"
             android:text="Добавить файл"
+            android:onClick="OpenDirectory"
             android:layout_weight="1">
         </Button>
 
@@ -36,7 +38,6 @@
         android:numColumns="auto_fit"
         android:stretchMode="columnWidth"
         android:verticalSpacing="10dp">
-
     </GridView>
 
 
