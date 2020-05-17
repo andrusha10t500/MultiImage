@@ -1,6 +1,7 @@
 package com.example.multifileimage;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageSwitcher;
@@ -17,11 +18,13 @@ public class FullImage extends AppCompatActivity {
         setContentView(R.layout.fullimageview);
         Intent intent = getIntent();
         mImageSwitcher = (ImageSwitcher)findViewById(R.id.imageSwitcher);
-        int position = intent.getExtras().getInt("id");
-        ImageAdapter imageAdapter = new ImageAdapter(this);
+//        String position = intent.getExtras().getInt("id");
+        String position = intent.getStringExtra("id");
+//        ImageAdapter imageAdapter = new ImageAdapter(this,null);
         ImageView imageView = (ImageView)findViewById(R.id.FullImage);
 
-        imageView.setImageResource(imageAdapter.mThumbdId[position]);
+//        imageView.setImageResource(imageAdapter.mThumbdId[position]);
+        imageView.setImageURI(Uri.parse(position));
 
     }
 
