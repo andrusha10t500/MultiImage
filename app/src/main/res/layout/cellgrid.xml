@@ -6,8 +6,10 @@
 
     <ImageView
         android:id="@+id/imagepart"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:gravity="fill_vertical|left"
+        style="@style/RoundedCornerButton">
     </ImageView>
 
 </LinearLayout>

@@ -1,8 +1,10 @@
 package com.example.multifileimage;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.media.Image;
 import android.net.Uri;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 public class ImageAdapter extends BaseAdapter  {
     private Context mContext;
     public String[] ImageArrayForUrl;
+
     public ImageAdapter(Context c, String[] mImageArrayForUrl) {
         mContext = c;
         ImageArrayForUrl = mImageArrayForUrl;
@@ -41,29 +44,33 @@ public class ImageAdapter extends BaseAdapter  {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ImageView imageview;
+//        ImageView imageview;
+        View mView;
         if(view == null) {
-            imageview = new ImageView(mContext);
-            imageview.setLayoutParams(new GridView.LayoutParams(100,100));
-            imageview.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageview.setPadding(8,8,8,8);
+            view = new View(mContext);
+            LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            mView = inflater.inflate(R.layout.cellgrid,viewGroup,false);
+
+//            --------------------------------------------
+//            imageview = new ImageView(mContext);
+//
+//            imageview.setLayoutParams(new GridView.LayoutParams(100,100));
+//            imageview.setScaleType(ImageView.ScaleType.CENTER_CROP);
+//            imageview.setPadding(8,8,8,8);
+//            --------------------------------------------
         }
         else {
-            imageview = (ImageView)view;
+//            imageview = (ImageView)view;
+            mView = (View)view;
         }
+        ImageView imageView = (ImageView)mView.findViewById(R.id.imagepart);
+        imageView.setImageURI(Uri.parse(ImageArrayForUrl[i]));
+        return mView;
 //        imageview.setImageResource(mThumbdId[i]);
-        imageview.setImageURI(Uri.parse(ImageArrayForUrl[i]));
-        return imageview;
+//        imageview.setImageURI(Uri.parse(ImageArrayForUrl[i]));
+//        return imageview;
     }
 
-    public int[] TransformArray(ArrayList<String> ArStr) {
-        int i=0;
-        int[] ArrayImagesInt = new int[ArStr.toArray().length];
-        for (String Image : ArStr) {
-            ArrayImagesInt[i++] = Image.hashCode();
-        }
-        return ArrayImagesInt;
-    }
 //    public String[] ImageArrayForUrl = { "storage/8B6D-99CF/DCIM/Camera/IMG_20190625_140057.jpg",
 //                                         "storage/8B6D-99CF/DCIM/Camera/IMG_20190625_140134.jpg"};
 //    public int[] mThumbdId; //{R.drawable.image1, R.drawable.image2};

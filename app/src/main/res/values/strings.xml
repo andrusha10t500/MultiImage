@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Multi File Image</string>
+    <string name="firstButton">Добавить файлы</string>
+    <string name="secondButton">Обновить</string>
 </resources>
