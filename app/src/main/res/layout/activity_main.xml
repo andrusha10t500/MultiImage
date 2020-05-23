@@ -35,7 +35,6 @@
             android:src="@drawable/save"
             android:background="@drawable/button_selector">
         </androidx.appcompat.widget.AppCompatImageButton>
-
     </LinearLayout>
 
     <GridView

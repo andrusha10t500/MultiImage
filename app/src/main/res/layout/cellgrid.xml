@@ -4,12 +4,12 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <com.example.multifileimage.RoundRectCornerImageView
         android:id="@+id/imagepart"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:gravity="fill_vertical|left"
-        style="@style/RoundedCornerButton">
-    </ImageView>
+        android:scaleType="fitXY"
+        android:background="@drawable/button">
+    </com.example.multifileimage.RoundRectCornerImageView>
 
 </LinearLayout>
