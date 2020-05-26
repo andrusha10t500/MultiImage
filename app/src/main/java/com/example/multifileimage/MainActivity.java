@@ -2,6 +2,7 @@ package com.example.multifileimage;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -13,13 +14,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.File;
 import java.util.ArrayList;
 
+//import MultiTif.MultiTif;
+
+
 public class MainActivity extends AppCompatActivity {
 //    ArrayList<String> ArStr = new ArrayList<String>();
+
     String [] ArStr;
     GridView gridview;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (data == null) {return;}
+        if (data == null) {
+            return;
+        }
         String url = data.getStringExtra("url");
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -30,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         String[] GetArray =  getIntent().getStringArrayExtra("ArrayString");
         gridview = (GridView) findViewById(R.id.GridView1);
+
         if (GetArray == null) {
             gridview.setAdapter(new ImageAdapter(this, ListDirectory()));
         } else {
@@ -45,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(),
                     FullImage.class);
 
-//            intent.putExtra("id",i);
             Toast.makeText(getApplicationContext(),adapterView.getItemAtPosition(i).toString(),Toast.LENGTH_SHORT).show();
             intent.putExtra("id",adapterView.getItemAtPosition(i).toString());
             startActivity(intent);
@@ -73,5 +80,13 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(getApplicationContext(),"no",Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void Refresh(View view) {
+        String result=gridview.getAdapter().getItem(1).toString().substring(0,gridview.getAdapter().getItem(1).toString().lastIndexOf("/"));
+        Toast.makeText(getApplicationContext(),gridview.getAdapter().getItem(1).toString().substring(0,gridview.getAdapter().getItem(1).toString().lastIndexOf("/")),
+                Toast.LENGTH_SHORT).show();
+
+//        MultiTif.TiffMultipage(new File(result));
     }
 }

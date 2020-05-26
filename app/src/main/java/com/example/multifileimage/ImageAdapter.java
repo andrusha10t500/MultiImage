@@ -1,17 +1,12 @@
 package com.example.multifileimage;
 
 import android.content.Context;
-import android.graphics.Paint;
-import android.media.Image;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
-
-import java.util.ArrayList;
 
 public class ImageAdapter extends BaseAdapter  {
     private Context mContext;
@@ -47,6 +42,7 @@ public class ImageAdapter extends BaseAdapter  {
 //        ImageView imageview;
         View mView;
         if(view == null) {
+//            --------------------------------------------
             view = new View(mContext);
             LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             mView = inflater.inflate(R.layout.cellgrid,viewGroup,false);
@@ -66,6 +62,7 @@ public class ImageAdapter extends BaseAdapter  {
         ImageView imageView = (ImageView)mView.findViewById(R.id.imagepart);
         imageView.setImageURI(Uri.parse(ImageArrayForUrl[i]));
         return mView;
+//        --------------------------------------------
 //        imageview.setImageResource(mThumbdId[i]);
 //        imageview.setImageURI(Uri.parse(ImageArrayForUrl[i]));
 //        return imageview;

@@ -27,8 +27,4 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'org.jetbrains:annotations-java5:15.0'
-    implementation files('libs/itextpdf-5.1.0.jar')
-    implementation files('libs/jai_imageio-1.1.jar')
-    implementation files('libs/jtransc-rt-0.5.0-ALPHA4.jar')
-    implementation files('libs/jtransc-rt-core-0.5.0-ALPHA4.jar')
 }

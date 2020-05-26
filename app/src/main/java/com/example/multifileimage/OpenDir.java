@@ -21,6 +21,7 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class OpenDir extends Activity {
     TextView txt;
     ListView list;
@@ -50,7 +51,6 @@ public class OpenDir extends Activity {
                 } else {
                     DirectoriesPath("/storage/" + adapterView.getItemAtPosition(i).toString(),0);
                 }
-
 //                Toast.makeText(getApplicationContext(),"Выбрано " + adapterView.getItemAtPosition(i).toString() ,Toast.LENGTH_SHORT).show();
             }
         });
@@ -91,6 +91,9 @@ public class OpenDir extends Activity {
 
     public void onClickGo(View view) {
         ClickGo();
+
+//        MultiTif mt  = new MultiTif();
+//        MultiTif.TiffMultipage(new File(txt.getText().toString()));
     }
     public void ClickGo() {
         Toast.makeText(getApplicationContext(),txt.getText().toString(),Toast.LENGTH_SHORT).show();

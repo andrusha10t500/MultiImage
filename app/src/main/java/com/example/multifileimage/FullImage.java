@@ -28,7 +28,7 @@ public class FullImage extends AppCompatActivity {
 
     }
 
-    public void SwitchImage(View view) {
+    public void SwitchImage(View view) {                
         mImageSwitcher.showNext();
     }
 }

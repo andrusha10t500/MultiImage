@@ -12,7 +12,8 @@ public class RoundRectCornerImageView extends ImageView {
     private Path path;
     private RectF rect;
     public RoundRectCornerImageView(Context context) {
-        super(context); init();
+        super(context);
+        init();
     }
     public RoundRectCornerImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -27,8 +28,7 @@ public class RoundRectCornerImageView extends ImageView {
     }
     @Override
     protected void onDraw(Canvas canvas) {
-        rect = new RectF(0, 0, this.getWidth(),
-                this.getHeight());
+        rect = new RectF(0, 0, this.getWidth(), this.getHeight());
         path.addRoundRect(rect, radius, radius, Path.Direction.CW);
         canvas.clipPath(path);
         super.onDraw(canvas);

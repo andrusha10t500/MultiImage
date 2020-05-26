@@ -33,6 +33,7 @@
             android:text="@string/secondButton"
             android:layout_weight="1"
             android:src="@drawable/save"
+            android:onClick="Refresh"
             android:background="@drawable/button_selector">
         </androidx.appcompat.widget.AppCompatImageButton>
     </LinearLayout>
