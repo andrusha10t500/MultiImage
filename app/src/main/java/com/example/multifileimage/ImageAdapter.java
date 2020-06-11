@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.io.File;
 
 public class ImageAdapter extends BaseAdapter  {
     private Context mContext;
@@ -60,7 +63,10 @@ public class ImageAdapter extends BaseAdapter  {
             mView = (View)view;
         }
         ImageView imageView = (ImageView)mView.findViewById(R.id.imagepart);
+
         imageView.setImageURI(Uri.parse(ImageArrayForUrl[i]));
+        mContext.getCacheDir().delete();
+
         return mView;
 //        --------------------------------------------
 //        imageview.setImageResource(mThumbdId[i]);

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/fone">
+    android:background="@drawable/fon">
     <!--    android:background="@color/fon"-->
 
     <LinearLayout
@@ -13,11 +13,10 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="75dp"
             android:layout_marginTop="50dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="@string/firstButton"
             android:layout_weight="1"
             android:onClick="OpenDirectory"
             android:src="@drawable/download"
@@ -26,11 +25,10 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="75dp"
             android:layout_marginTop="50dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="@string/secondButton"
             android:layout_weight="1"
             android:src="@drawable/save"
             android:onClick="Refresh"
@@ -48,5 +46,12 @@
         android:horizontalSpacing="10dp"
         android:numColumns="auto_fit"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="10dp"></GridView>
+        android:verticalSpacing="10dp">
+    </GridView>
+
+    <!--    <Gallery-->
+    <!--        android:id="@+id/GridView1"-->
+    <!--        style="@style/RoundedCornerButton"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="match_parent"/>-->
 </LinearLayout>

@@ -6,13 +6,13 @@
     android:insetTop="10dp">
 <!--    <ripple android:color="?attr/colorControlHighlight">-->
     <ripple android:color="?attr/colorButtonNormal">
-        <item>
+        <item android:gravity="center">
             <shape android:shape="rectangle">
 <!--                android:tint="#0091ea">-->
                 <corners android:radius="10dp"/>
 <!--                <solid android:color="#1a237e"/>-->
-                <solid android:color="#7FC0C0C0"/>
-                <padding android:bottom="6dp"/>
+                <solid android:color="#88FFFFFF"/>
+<!--                <padding android:right="10dp"/>-->
             </shape>
         </item>
     </ripple>

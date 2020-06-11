@@ -25,7 +25,6 @@ public class FullImage extends AppCompatActivity {
 
 //        imageView.setImageResource(imageAdapter.mThumbdId[position]);
         imageView.setImageURI(Uri.parse(position));
-
     }
 
     public void SwitchImage(View view) {                

@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.example.multifileimage"
-        minSdkVersion 21
-        targetSdkVersion 29
+        minSdkVersion 24
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -20,11 +20,17 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'org.jetbrains:annotations-java5:15.0'
+    implementation files('libs/MultiImage.jar')
+    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha03'
+    implementation fileTree(include: ['*.aar', '*.jar'], exclude: [], dir: 'libs')
+    implementation 'com.github.lafa.twelvemonkeyspurejava.imageio:imageio:1.0.1'
+    implementation 'org.arakhne.afc.ui:awt:13.0'
+    //    implementation files('/home/leo/documents/android-studio/jre/jre/lib/rt.jar')
+    implementation 'cz.geek:itext:4.2.1'
 }

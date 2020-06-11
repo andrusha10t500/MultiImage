@@ -56,6 +56,13 @@ public class OpenDir extends Activity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        getApplicationContext().getCacheDir().delete();
+        finish();
+    }
+
     public void DirectoriesPath(String InSet, int But) {
 //      But=1 - признак кнопки
         File[] f;
